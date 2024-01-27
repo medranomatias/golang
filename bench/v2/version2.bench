@@ -1,0 +1,16 @@
+goos: darwin
+goarch: amd64
+pkg: github.com/medranomatias/benchmark/version
+cpu: VirtualApple @ 2.50GHz
+BenchmarkMemoryWaste-8   	 9424604	       129.0 ns/op	     896 B/op	       1 allocs/op
+BenchmarkMemoryWaste-8   	 9354955	       127.6 ns/op	     896 B/op	       1 allocs/op
+BenchmarkMemoryWaste-8   	 9608666	       126.8 ns/op	     896 B/op	       1 allocs/op
+BenchmarkMemoryWaste-8   	 9387873	       126.4 ns/op	     896 B/op	       1 allocs/op
+BenchmarkMemoryWaste-8   	 9456180	       126.0 ns/op	     896 B/op	       1 allocs/op
+BenchmarkMemoryWaste-8   	 9632019	       125.3 ns/op	     896 B/op	       1 allocs/op
+BenchmarkMemoryWaste-8   	 9554906	       125.3 ns/op	     896 B/op	       1 allocs/op
+BenchmarkMemoryWaste-8   	 9532707	       127.0 ns/op	     896 B/op	       1 allocs/op
+BenchmarkMemoryWaste-8   	 9485896	       125.2 ns/op	     896 B/op	       1 allocs/op
+BenchmarkMemoryWaste-8   	 9575848	       125.0 ns/op	     896 B/op	       1 allocs/op
+PASS
+ok  	github.com/medranomatias/benchmark/version2	14.377s

@@ -1,0 +1,15 @@
+goos: darwin
+goarch: amd64
+pkg: github.com/medranomatias/benchmark/version
+cpu: VirtualApple @ 2.50GHz
+              │ version1/version1.bench │       version2/version2.bench       │
+              │         sec/op          │   sec/op     vs base                │
+MemoryWaste-8               375.4n ± 2%   126.2n ± 1%  -66.38% (p=0.000 n=10)
+
+              │ version1/version1.bench │      version2/version2.bench       │
+              │          B/op           │    B/op     vs base                │
+MemoryWaste-8               2040.0 ± 0%   896.0 ± 0%  -56.08% (p=0.000 n=10)
+
+              │ version1/version1.bench │      version2/version2.bench       │
+              │        allocs/op        │ allocs/op   vs base                │
+MemoryWaste-8                8.000 ± 0%   1.000 ± 0%  -87.50% (p=0.000 n=10)
