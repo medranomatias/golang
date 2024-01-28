@@ -26,5 +26,7 @@ go.work
 *.pprof
 **/*.pprof
 
+**/*.out
+
 main
 **/main
