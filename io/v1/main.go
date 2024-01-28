@@ -2,10 +2,11 @@ package main
 
 import (
 	"fmt"
-	"github.com/pkg/profile"
 	"io"
 	"log"
 	"os"
+	"runtime"
+	"runtime/pprof"
 	"unicode"
 )
 
@@ -15,9 +16,18 @@ func readbyte(r io.Reader) (rune, error) {
 	return rune(buff[0]), err
 }
 
-func main() {
-	ss := profile.Start(profile.CPUProfile, profile.ProfilePath("."))
+func init() {
+	runtime.SetCPUProfileRate(500)
+}
 
+func main() {
+	f1, err1 := os.Create("profile.pprof")
+	if err1 != nil {
+		panic(err1)
+	}
+
+	pprof.StartCPUProfile(f1)
+	defer pprof.StopCPUProfile()
 	f, err := os.Open(os.Args[1])
 	if err != nil {
 		log.Fatalf("couldnt open file %q: %v", os.Args[1], err)
@@ -38,6 +48,5 @@ func main() {
 		}
 		inword = unicode.IsLetter(r)
 	}
-	ss.Stop()
 	fmt.Printf("%q: %d words", os.Args[1], words)
 }
