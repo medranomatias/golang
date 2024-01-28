@@ -21,7 +21,7 @@ func init() {
 }
 
 func main() {
-	f1, err1 := os.Create("profile.pprof")
+	f1, err1 := os.Create("cpu.pprof")
 	if err1 != nil {
 		panic(err1)
 	}

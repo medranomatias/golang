@@ -21,5 +21,10 @@
 go.work
 
 *.pdf
+**/*.pdf
+
 *.pprof
+**/*.pprof
+
 main
+**/main
