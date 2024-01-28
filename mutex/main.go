@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"io"
 	"os"
 	"runtime"
 	"runtime/pprof"
@@ -51,5 +50,4 @@ func main() {
 	pprof.Lookup("mutex").WriteTo(file, 0)
 	wg.Wait()
 	defer file.Close()
-	var v io.Writer
 }
