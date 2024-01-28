@@ -7,7 +7,6 @@ import (
 	"io"
 	"log"
 	"os"
-	"runtime"
 	"unicode"
 )
 
@@ -18,8 +17,7 @@ func readbyte(r io.Reader) (rune, error) {
 }
 
 func main() {
-	ss := profile.Start(profile.MemProfile, profile.MemProfileRate(1), profile.ProfilePath("."))
-	runtime.SetCPUProfileRate(1)
+	defer profile.Start(profile.CPUProfile, profile.ProfilePath(".")).Stop()
 	f, err := os.Open(os.Args[1])
 	if err != nil {
 		log.Fatalf("couldnt open file %q: %v", os.Args[1], err)
@@ -41,6 +39,5 @@ func main() {
 		}
 		inword = unicode.IsLetter(r)
 	}
-	ss.Stop()
 	fmt.Printf("%q: %d words", os.Args[1], words)
 }
