@@ -1,4 +1,4 @@
-module github.com/medranomatias/io
+module github.com/medranomatias/io/v2
 
 go 1.21.6
 
