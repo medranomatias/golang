@@ -46,7 +46,6 @@ func Parse() interface {
 	flag.Parse()
 	switch strings.ToLower(profileType) {
 	case "trace":
-
 		deferCommand = profile.Start(profile.TraceProfile, profile.ProfilePath("."))
 	case "block":
 		deferCommand = profile.Start(profile.BlockProfile, profile.ProfilePath("."))
