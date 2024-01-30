@@ -35,7 +35,7 @@ func Parse() interface {
 		runtime.MemProfileRate = *memProfileRate
 	}
 	var profileType string
-	flag.StringVar(&profileType, "common", "", "select common type")
+	flag.StringVar(&profileType, "profile", "", "select common type")
 	flag.Parse()
 	switch strings.ToLower(profileType) {
 	case "trace":

@@ -3,7 +3,7 @@
 clean:
 	rm -frv main *.pdf *.pprof *.out
 build: clean
-	go build main.go
+	go build -race main.go
 pprof:
 	go tool pprof main goroutine.pprof
 trace:
