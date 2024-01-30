@@ -2,9 +2,8 @@ package main
 
 import (
 	"fmt"
+	"github.com/medranomatias/common"
 	"time"
-
-	"github.com/medranomatias/common/command"
 )
 
 func f(s string) {
