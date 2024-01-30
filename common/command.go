@@ -10,6 +10,13 @@ import (
 	"github.com/pkg/profile"
 )
 
+type Empty struct {
+}
+
+func (empty Empty) Stop() {
+
+}
+
 func Parse() interface {
 	Stop()
 } {
@@ -59,6 +66,8 @@ func Parse() interface {
 		deferCommand = profile.Start(profile.CPUProfile, profile.ProfilePath("."))
 	default:
 		fmt.Println("nothing to do")
+		deferCommand = Empty{}
 	}
+
 	return deferCommand
 }
