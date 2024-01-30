@@ -21,7 +21,7 @@ func main() {
 
 func ExampleStart_withFlags() {
 	// use the flags package to selectively enable profiling.
-	mode := flag.String("tools.mode", "", "enable profiling mode, one of [cpu, mem, mutex, block]")
+	mode := flag.String("common.mode", "", "enable profiling mode, one of [cpu, mem, mutex, block]")
 	flag.Parse()
 	fmt.Printf("Goroutine %s\n", *mode)
 	switch *mode {

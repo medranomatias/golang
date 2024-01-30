@@ -1,4 +1,4 @@
-package tools
+package common
 
 import (
 	"flag"
@@ -16,25 +16,25 @@ func profileOption() interface {
 		Stop()
 	}
 
-	var cpuProfileRate = flag.Int("cpu-tools-rate", math.MinInt, "")
+	var cpuProfileRate = flag.Int("cpu-common-rate", math.MinInt, "")
 	if *cpuProfileRate != math.MinInt {
 		runtime.SetCPUProfileRate(*cpuProfileRate)
 	}
-	var mutexProfileFraction = flag.Int("mutex-tools-fraction", math.MinInt, "")
+	var mutexProfileFraction = flag.Int("mutex-common-fraction", math.MinInt, "")
 	if *mutexProfileFraction != math.MinInt {
 		runtime.SetMutexProfileFraction(*mutexProfileFraction)
 	}
-	var blockProfileRate = flag.Int("block-tools-rate", math.MinInt, "")
+	var blockProfileRate = flag.Int("block-common-rate", math.MinInt, "")
 	if *blockProfileRate != math.MinInt {
 		runtime.SetBlockProfileRate(*blockProfileRate)
 	}
 
-	var memProfileRate = flag.Int("mem-tools-rate", math.MinInt, "")
+	var memProfileRate = flag.Int("mem-common-rate", math.MinInt, "")
 	if *memProfileRate != math.MinInt {
 		runtime.MemProfileRate = *memProfileRate
 	}
 	var profileType string
-	flag.StringVar(&profileType, "tools", "", "select tools type")
+	flag.StringVar(&profileType, "common", "", "select common type")
 	flag.Parse()
 	switch strings.ToLower(profileType) {
 	case "trace":
