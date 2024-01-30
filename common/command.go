@@ -1,15 +1,16 @@
-package common
+package command
 
 import (
 	"flag"
 	"fmt"
-	"github.com/pkg/profile"
 	"math"
 	"runtime"
 	"strings"
+
+	"github.com/pkg/profile"
 )
 
-func profileOption() interface {
+func Parse() interface {
 	Stop()
 } {
 	var deferCommand interface {
