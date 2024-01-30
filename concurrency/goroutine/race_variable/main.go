@@ -1,3 +1,4 @@
+// go tool compile "-m" main.go #check if variable move to heap or still on stack
 package main
 
 import (
@@ -6,9 +7,6 @@ import (
 	"time"
 )
 
-func f(s string) {
-	fmt.Printf("Goroutine %s\n", s)
-}
 func main() {
 	defer command.Parse().Stop()
 	for _, s := range []string{"a", "b", "c"} {
