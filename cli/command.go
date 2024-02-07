@@ -50,11 +50,11 @@ func Parse() interface {
 	case "block":
 		deferCommand = profile.Start(profile.BlockProfile, profile.ProfilePath("."))
 	case "mem":
-		deferCommand = profile.Start(profile.MemProfile, profile.ProfilePath("."))
+		deferCommand = profile.Start(profile.MemProfile, profile.MemProfileRate(1), profile.ProfilePath("."))
 	case "alloc":
-		deferCommand = profile.Start(profile.MemProfileAllocs, profile.ProfilePath("."))
+		deferCommand = profile.Start(profile.MemProfileAllocs, profile.MemProfileRate(1), profile.ProfilePath("."))
 	case "heap":
-		deferCommand = profile.Start(profile.MemProfileHeap, profile.ProfilePath("."))
+		deferCommand = profile.Start(profile.MemProfileHeap, profile.MemProfileRate(1), profile.ProfilePath("."))
 	case "mutex":
 		deferCommand = profile.Start(profile.MutexProfile, profile.ProfilePath("."))
 	case "clock":

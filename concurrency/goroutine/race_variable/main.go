@@ -3,7 +3,7 @@ package main
 
 import (
 	"fmt"
-	command "github.com/medranomatias/common"
+	command "github.com/medranomatias/cli"
 	"time"
 )
 
